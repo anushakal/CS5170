@@ -14,17 +14,21 @@ This project demonstrates how to use the OpenAI API to generate responses to use
 
 ## Setup Instructions
 1) Clone this repository
-    git clone <repo-url>
-    cd <repo-folder>
+    
+        git clone <repo-url>
+        cd <repo-folder>
 
 2) Install dependencies defined in requirements.txt using pip
-    pip install -r requirements.txt
+    
+        pip install -r requirements.txt
 
 3) Create a .env file in the root folder of the project and add the OpenAI key there as follows:
-    OPENAI_KEY = "your_api_key"
+        
+        OPENAI_KEY = "your_api_key"
 
 4) Running the script
-    python api_usage.py
+        
+        python api_usage.py
 
 ## Remarks
  - The prompt can be changed according to what the user wants in the api_usage.py
