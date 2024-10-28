@@ -13,6 +13,24 @@ class Bot():
         api_key = os.getenv("OPENAI_KEY")  # Retrieve the API key for OpenAI from environment variables.
         self.llm = OpenAI(api_key=api_key)  # Initialize the OpenAI API with the provided key.
     
+    def say_hello(self):
+        # Method to display the hello world response from OpenAI API
+        response = self.llm.chat.completions.create(
+            model="gpt-3.5-turbo",  # Specify the OpenAI model to use for the response.
+            messages=[  # Define the prompt messages for the API.
+                {
+                    "role": "system", 
+                    "content": "You are a helpful assistant."
+                },
+                {
+                    "role": "user",
+                    "content": "This is the first chat with Open AI. Like the hello world program"  # Hello World Prompt
+                }
+            ]
+        )
+        
+        print(response.choices[0].message.content)  # Print the AI's response
+
     def generate_response(self):
         # Method to generate a response from the OpenAI API based on a specific prompt.
         response = self.llm.chat.completions.create(
@@ -24,7 +42,7 @@ class Bot():
                 },
                 {
                     "role": "user",
-                    "content": "Write 2-3 sentences about the ethical use of AI"  # User prompt.
+                    "content": "Write 2-3 sentences about using AI ethically"  # User prompt.
                 }
             ]
         )
@@ -34,4 +52,5 @@ class Bot():
 # Main entry point to execute the script.
 if __name__ == "__main__":
     bot = Bot()  # Instance of the bot
+    bot.say_hello() # Call the method to generate the hello world response.
     bot.generate_response()  # Call the method to generate and display a response.
