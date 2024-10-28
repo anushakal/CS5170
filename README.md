@@ -10,7 +10,7 @@ This project demonstrates how to use the OpenAI API to generate responses to use
 
 ## Dependencies
  - Python environment (3.7+)
- - OpenAI API Key (Can be obtained by signing up for one at their website)
+ - OpenAI API Key (Can be obtained by signing up for one at their website https://openai.com/)
 
 ## Setup Instructions
 1) Clone this repository
